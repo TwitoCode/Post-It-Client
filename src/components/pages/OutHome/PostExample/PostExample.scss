@@ -1,0 +1,12 @@
+.post-example {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 2rem;
+
+  .header {
+    margin: 2rem;
+    font-size: 4rem;
+  }
+}
