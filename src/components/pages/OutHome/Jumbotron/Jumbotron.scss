@@ -1,0 +1,29 @@
+@import '../../../misc/global.scss';
+
+.jumbotron {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	background-color: #d4d4d4;
+	height: 40vh;
+
+	.details {
+		text-align: center;
+
+		.header {
+			font-size: 7rem;
+		}
+
+		.buttons {
+			margin: 2rem;
+
+			button {
+				@include Button;
+
+				padding: 1.25rem 4.75rem;
+				font-size: 1.25rem;
+			}
+		}
+	}
+}

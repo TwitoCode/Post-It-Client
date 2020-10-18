@@ -1,0 +1,17 @@
+@mixin Button {
+	outline: none;
+	background: darken($bgColor, 20);
+	color: white;
+	padding: 1rem 0.75rem;
+	border: none;
+	border-radius: 0.5rem;
+	transition: all ease-in 0.1s;
+
+	&:hover {
+		transition: all ease-in 0.1s;
+		background: darken($bgColor, 40);
+	}
+}
+
+//Colors
+$bgColor: #644873;
