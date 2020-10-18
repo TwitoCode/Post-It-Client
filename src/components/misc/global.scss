@@ -13,5 +13,17 @@
 	}
 }
 
+@mixin Link {
+	list-style-type: none;
+	text-decoration: none;
+	color: white;
+	font-size: 1.25rem;
+
+	&:hover {
+		transition: all ease-in 0.2s;
+		opacity: 65%;
+	}
+}
+
 //Colors
 $bgColor: #644873;

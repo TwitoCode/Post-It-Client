@@ -18,8 +18,8 @@
 
 		.heading {
 			color: white;
-      font-size: 2rem;
-      font-weight: 500;
+			font-size: 2rem;
+			font-weight: 500;
 		}
 	}
 
@@ -28,26 +28,25 @@
 		justify-content: space-around;
 
 		.link {
-			list-style-type: none;
-			text-decoration: none;
-			color: white;
-			font-size: 1.25rem;
-
-			&:hover {
-				transition: all ease-in 0.2s;
-				opacity: 65%;
-			}
+			@include Link;
 		}
 	}
 
 	.empty {
-    display: flex;
+		display: flex;
 		flex: 8;
-    justify-content: flex-end;
-    
-    button {
-      @include Button;
-    }
+		justify-content: flex-end;
+		align-items: center;
+
+		.sign-up {
+			@include Button;
+		}
+
+		.sign-in {
+			@include Link;
+			margin-left: 1rem;
+			font-size: 1rem;
+		}
 	}
 }
 

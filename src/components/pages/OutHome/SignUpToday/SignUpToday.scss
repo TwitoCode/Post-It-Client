@@ -1,0 +1,22 @@
+@import '../../../misc//global.scss';
+
+.sign-up-today {
+  background-color: darken($bgColor, 5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+
+	button {
+    @include Button;
+    padding: 1.25rem 3rem;
+    font-size: 2rem;;
+  }
+  
+  h1 {
+    font-size: 7rem;
+    color: white;
+    margin: 2rem;;
+  }
+}

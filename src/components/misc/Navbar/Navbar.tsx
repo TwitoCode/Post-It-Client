@@ -25,7 +25,18 @@ export const Navbar: FC = () => {
 							Account
 						</Link>
 					</div>
-					<div className='empty'>{!user && <button>Sign Up</button>}</div>
+					<div className='empty'>
+						{!user && (
+							<>
+								<Link to='/signup'>
+									<button className='sign-up'>Sign Up</button>
+								</Link>
+								<Link to='/signin' className='sign-in'>
+									Or Sign In
+								</Link>
+							</>
+						)}
+					</div>
 				</div>
 			</div>
 		</div>
