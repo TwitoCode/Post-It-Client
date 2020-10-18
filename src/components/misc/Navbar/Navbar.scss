@@ -1,0 +1,67 @@
+$bgColor: #644873;
+
+.bar {
+	display: flex;
+	height: 7.5vh;
+	width: 100%;
+	background: $bgColor;
+
+	.flex {
+		display: flex;
+		align-items: center;
+		flex-direction: row;
+	}
+
+	.nav-brand {
+		flex: 1;
+		justify-content: space-evenly;
+
+		.heading {
+			color: white;
+			font-size: 2rem;
+		}
+	}
+
+	.nav-links {
+		flex: 2;
+		justify-content: space-around;
+
+		.link {
+			list-style-type: none;
+			text-decoration: none;
+			color: white;
+			font-size: 1.25rem;
+
+			&:hover {
+				transition: all ease-in 0.2s;
+				opacity: 65%;
+			}
+		}
+	}
+
+	.empty {
+    display: flex;
+		flex: 8;
+    justify-content: flex-end;
+    
+    button {
+      outline: none;
+      background: darken($bgColor, 20);
+      color: white;
+      padding: 1rem .75rem;
+      border: none;
+      border-radius: 0.5rem;
+      transition: all ease-in 0.1s;
+
+      &:hover {
+        transition: all ease-in 0.1s;
+        background: darken($bgColor, 40)
+      }
+    }
+	}
+}
+
+.container {
+	margin: auto;
+	width: 90%;
+}
