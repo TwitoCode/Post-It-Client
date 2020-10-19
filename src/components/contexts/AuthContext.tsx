@@ -4,6 +4,7 @@ import { auth } from '../../fire';
 interface AuthContextData {
 	signIn: (email: string, password: string) => Promise<SignOutput>;
 	signUp: (email: string, password: string) => Promise<SignOutput>;
+	updateUserName: (name: string) => void;
 	signOut: () => void;
 }
 
@@ -42,10 +43,19 @@ export const AuthProvider: FC = ({ children }) => {
 		}
 	};
 
+	const updateUserName = async (name: string) => {
+		try {
+			await auth.currentUser?.updateProfile({ displayName: name });
+			console.log(`New Username: ${auth.currentUser?.displayName}`);
+		} catch (error) {
+			console.log(error.message);
+		}
+	};
+
 	const signOut = () => auth.signOut();
 
 	return (
-		<AuthContext.Provider value={{ signIn, signOut, signUp }}>
+		<AuthContext.Provider value={{ signIn, signOut, signUp, updateUserName }}>
 			{children}
 		</AuthContext.Provider>
 	);

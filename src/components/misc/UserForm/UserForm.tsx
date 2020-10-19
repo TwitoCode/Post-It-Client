@@ -7,7 +7,7 @@ interface Props {
 }
 
 export const UserForm = (props: Props): ReactElement => {
-	const { signUp } = useContext(AuthContext);
+	const { signUp, signIn, updateUserName } = useContext(AuthContext);
 
 	const [email, setEmail] = useState('');
 	const [username, setUsername] = useState('');
@@ -16,14 +16,35 @@ export const UserForm = (props: Props): ReactElement => {
 
 	const submit = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		const { error, message } = await signUp(email, password);
+		switch (props.type) {
+			case 'up': {
+				const { error, message } = await signUp(email, password);
+				updateUserName(username);
 
-		if (error) {
-			console.log(error);
-			setError(error);
-		} else if (message) {
-			console.log(message);
-			window.location.href = '/';
+				if (error) {
+					console.log(error);
+					setError(error);
+				} else if (message) {
+					console.log(message);
+					window.location.href = '/';
+				}
+
+				break;
+			}
+
+			case 'in': {
+				const { error, message } = await signIn(email, password);
+
+				if (error) {
+					console.log(error);
+					setError(error);
+				} else if (message) {
+					console.log(message);
+					window.location.href = '/';
+				}
+
+				break;
+			}
 		}
 	};
 
@@ -44,15 +65,28 @@ export const UserForm = (props: Props): ReactElement => {
 						<label>Username</label>
 						<input onChange={(e) => setUsername(e.target.value)} />
 					</div>
-					<button type='submit' className='submit-button'>Submit</button>
+					<button type='submit' className='submit-button'>
+						Submit
+					</button>
 					<h1 className='error'>{error}</h1>
 				</form>
 			)}
 			{props.type === 'in' && (
-				<div>
+				<form onSubmit={submit}>
 					<h1>Sign In</h1>
-					<div className='email'></div>
-				</div>
+					<div className='input-group'>
+						<label>Email</label>
+						<input type='email' onChange={(e) => setEmail(e.target.value)} />
+					</div>
+					<div className='input-group'>
+						<label>Password</label>
+						<input type='password' onChange={(e) => setPassword(e.target.value)} />
+					</div>
+					<button type='submit' className='submit-button'>
+						Submit
+					</button>
+					<h1 className='error'>{error}</h1>
+				</form>
 			)}
 			{/* {(props.type !== 'out' || "in") && <h1>Type not valid</h1>} */}
 		</>
