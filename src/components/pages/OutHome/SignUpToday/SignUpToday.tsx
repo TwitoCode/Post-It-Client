@@ -4,9 +4,9 @@ import './SignUpToday.scss';
 
 export const SignUpToday: FC = () => {
 	return (
-    <div className='sign-up-today'>
-      <h1>Sign Up Today!</h1>
-			<Link to='/signup'>
+		<div className='sign-up-today'>
+			<h1>Sign Up Today!</h1>
+			<Link to='/account/signup'>
 				<button>Sign Up</button>
 			</Link>
 		</div>

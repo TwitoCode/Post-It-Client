@@ -28,10 +28,10 @@ export const Navbar: FC = () => {
 					<div className='empty'>
 						{!user && (
 							<>
-								<Link to='/signup'>
+								<Link to='/account/signup'>
 									<button className='sign-up'>Sign Up</button>
 								</Link>
-								<Link to='/signin' className='sign-in'>
+								<Link to='/account/signin' className='sign-in'>
 									Or Sign In
 								</Link>
 							</>
