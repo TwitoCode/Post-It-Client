@@ -54,16 +54,16 @@ export const UserForm = (props: Props): ReactElement => {
 				<form onSubmit={submit}>
 					<h1>Sign Up</h1>
 					<div className='input-group'>
+						<label>Username</label>
+						<input onChange={(e) => setUsername(e.target.value)} />
+					</div>
+					<div className='input-group'>
 						<label>Email</label>
 						<input type='email' onChange={(e) => setEmail(e.target.value)} />
 					</div>
 					<div className='input-group'>
 						<label>Password</label>
 						<input type='password' onChange={(e) => setPassword(e.target.value)} />
-					</div>
-					<div className='input-group'>
-						<label>Username</label>
-						<input onChange={(e) => setUsername(e.target.value)} />
 					</div>
 					<button type='submit' className='submit-button'>
 						Submit
@@ -88,7 +88,6 @@ export const UserForm = (props: Props): ReactElement => {
 					<h1 className='error'>{error}</h1>
 				</form>
 			)}
-			{/* {(props.type !== 'out' || "in") && <h1>Type not valid</h1>} */}
 		</>
 	);
 };

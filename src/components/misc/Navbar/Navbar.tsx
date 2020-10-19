@@ -36,6 +36,7 @@ export const Navbar: FC = () => {
 								</Link>
 							</>
 						)}
+						{user && <h1 className='username'>Signed in as {user.displayName}</h1>}
 					</div>
 				</div>
 			</div>
