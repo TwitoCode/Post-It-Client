@@ -1,4 +1,5 @@
 import React, { FormEvent, ReactElement, useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 import './UserForm.scss';
 
@@ -68,6 +69,11 @@ export const UserForm = (props: Props): ReactElement => {
 					<button type='submit' className='submit-button'>
 						Submit
 					</button>
+					<div className='link-container'>
+						<Link to='/account/signin' className='link'>
+							Don't have an Account? Sign Up
+						</Link>
+					</div>
 					<h1 className='error'>{error}</h1>
 				</form>
 			)}
@@ -85,6 +91,12 @@ export const UserForm = (props: Props): ReactElement => {
 					<button type='submit' className='submit-button'>
 						Submit
 					</button>
+					<div className='link-container'>
+						<Link to='/account/signup' className='link'>
+							Already have an Account? Sign In
+						</Link>
+					</div>
+
 					<h1 className='error'>{error}</h1>
 				</form>
 			)}

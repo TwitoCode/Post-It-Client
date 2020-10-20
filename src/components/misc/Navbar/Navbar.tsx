@@ -1,11 +1,13 @@
-import React, { FC } from 'react';
+import React, { FC, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.scss';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../../fire';
+import { AuthContext } from '../../contexts/AuthContext';
 
 export const Navbar: FC = () => {
 	const [user] = useAuthState(auth);
+	const { signOut } = useContext(AuthContext);
 
 	return (
 		<div className='bar'>
@@ -36,7 +38,14 @@ export const Navbar: FC = () => {
 								</Link>
 							</>
 						)}
-						{user && <h1 className='username'>Signed in as {user.displayName}</h1>}
+						{user && (
+							<>
+								<h1 className='username'>Signed in as {user.displayName}</h1>
+								<button className='sign-out' onClick={() => signOut()}>
+									Sign Out
+								</button>
+							</>
+						)}
 					</div>
 				</div>
 			</div>

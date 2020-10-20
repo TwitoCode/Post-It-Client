@@ -53,6 +53,11 @@
 			font-weight: 400;
 			font-size: 1.25rem;
 		}
+
+		.sign-out {
+			@include Button;	
+			margin-left: 2rem;
+		}
 	}
 }
 

@@ -40,6 +40,16 @@ form {
 		}
 	}
 
+	.link-container {
+		padding: 1rem;
+    padding-left: 0;
+    
+		.link {
+			@include Link;
+			color: #14a1ff;
+		}
+	}
+
 	.error {
 		color: #a80000;
 		font-weight: 400;
