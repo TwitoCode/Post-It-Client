@@ -17,15 +17,19 @@ export const Navbar: FC = () => {
 						<h1 className='heading'>Post-It</h1>
 					</div>
 					<div className='flex nav-links'>
-						<Link to='/' className='link'>
-							Home
-						</Link>
-						<Link to='/posts' className='link'>
-							Posts
-						</Link>
-						<Link to='/account' className='link'>
-							Account
-						</Link>
+						{user && (
+							<>
+								<Link to='/' className='link'>
+									Home
+								</Link>
+								<Link to='/posts' className='link'>
+									Posts
+								</Link>
+								<Link to='/account' className='link'>
+									Account
+								</Link>
+							</>
+						)}
 					</div>
 					<div className='empty'>
 						{!user && (
@@ -41,7 +45,12 @@ export const Navbar: FC = () => {
 						{user && (
 							<>
 								<h1 className='username'>Signed in as {user.displayName}</h1>
-								<button className='sign-out' onClick={() => signOut()}>
+								<button
+									className='sign-out'
+									onClick={() => {
+										signOut();
+										window.location.href = '/';
+									}}>
 									Sign Out
 								</button>
 							</>

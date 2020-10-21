@@ -71,7 +71,7 @@ export const UserForm = (props: Props): ReactElement => {
 					</button>
 					<div className='link-container'>
 						<Link to='/account/signin' className='link'>
-							Don't have an Account? Sign Up
+							Already have an Account? Sign In
 						</Link>
 					</div>
 					<h1 className='error'>{error}</h1>
@@ -93,7 +93,7 @@ export const UserForm = (props: Props): ReactElement => {
 					</button>
 					<div className='link-container'>
 						<Link to='/account/signup' className='link'>
-							Already have an Account? Sign In
+							Don't have an Account? Sign Up
 						</Link>
 					</div>
 
