@@ -14,8 +14,13 @@ export const Post = (props: Props): ReactElement => {
 				<h1 className='name'>{props.username}</h1>
 			</div>
 			<div className='post-details'>
-				<h1 className='name'>{props.name}</h1>
-				<h1 className='desc'>{props.desc}</h1>
+				<div>
+					<h1 className='name'>{props.name}</h1>
+				</div>
+
+				<div>
+					<h1 className='desc'>{props.desc}</h1>
+				</div>
 			</div>
 		</div>
 	);

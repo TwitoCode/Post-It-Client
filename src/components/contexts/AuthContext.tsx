@@ -38,7 +38,6 @@ export const AuthProvider: FC = ({ children }) => {
 				error: null,
 			};
 		} catch (error) {
-			console.log(error.message);
 			return await { message: null, error: error.message };
 		}
 	};
@@ -46,9 +45,9 @@ export const AuthProvider: FC = ({ children }) => {
 	const updateUserName = async (name: string) => {
 		try {
 			await auth.currentUser?.updateProfile({ displayName: name });
-			console.log(`New Username: ${auth.currentUser?.displayName}`);
+			// console.log(`New Username: ${auth.currentUser?.displayName}`);
 		} catch (error) {
-			console.log(error.message);
+			// console.log(error.message);
 		}
 	};
 

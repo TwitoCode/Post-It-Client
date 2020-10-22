@@ -30,6 +30,7 @@ form {
 		$color: #008dd9;
 		background-color: $color;
 		margin-top: 1rem;
+		margin-left: 0;
 
 		&:hover {
 			background-color: darken($color, 20);

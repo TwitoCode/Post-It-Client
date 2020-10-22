@@ -7,7 +7,6 @@ import React, {
 	useEffect,
 	useState,
 } from 'react';
-import { Redirect } from 'react-router-dom';
 import { auth } from '../../fire';
 import { Posts, User } from '../../global';
 import { CREATE_POST, POSTS, POST_BY_USER } from '../misc/queries';
@@ -18,7 +17,6 @@ interface PostsContextInterface {
 
 	postsByUser: QueryResult<Posts, Record<string, any>>;
 	posts: QueryResult<Posts, Record<string, any>>;
-	createPostFunc: () => void;
 	refetchTime: number;
 }
 
@@ -57,7 +55,7 @@ export const PostsProvider: FC = ({ children }) => {
 	}, []);
 
 	useEffect(() => {
-		createPost();
+		createPostFunc();
 
 		const interval = setInterval(() => {
 			posts.refetch();
@@ -74,7 +72,7 @@ export const PostsProvider: FC = ({ children }) => {
 
 	const createPostFunc = () => {
 		createPost().then((data) => {
-			console.log(data);
+			// console.log(data);
 			posts.refetch();
 		});
 	};
@@ -86,7 +84,6 @@ export const PostsProvider: FC = ({ children }) => {
 				setPostDetails,
 				postsByUser,
 				posts,
-				createPostFunc,
 				refetchTime,
 			}}>
 			{children}

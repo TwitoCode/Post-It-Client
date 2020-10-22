@@ -1,0 +1,31 @@
+.grid {
+	display: grid;
+	grid-template-columns: 1fr 0.5fr 1fr;
+	margin: 1rem;
+
+	.account-user-details {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		.account-username {
+			text-align: center;
+			font-weight: 400;
+		}
+	}
+
+	.account-user-posts {
+		.posts-header {
+			text-align: center;
+			margin: 2rem;
+			font-size: 3rem;
+			font-weight: 400;
+		}
+	}
+
+	.empty {
+		// background-color: rebeccapurple;
+		width: 0.1rem;
+		background-color: grey;
+	}
+}

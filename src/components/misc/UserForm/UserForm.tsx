@@ -24,10 +24,10 @@ export const UserForm = (props: Props): ReactElement => {
 				updateUserName(username);
 
 				if (error) {
-					console.log(error);
+					// console.log(error);
 					setError(error);
 				} else if (message) {
-					console.log(message);
+					// console.log(message);
 					window.location.href = '/';
 				}
 
@@ -38,11 +38,11 @@ export const UserForm = (props: Props): ReactElement => {
 				const { error, message } = await signIn(email, password);
 
 				if (error) {
-					console.log(error);
+					// console.log(error);
 					setError(error);
 				} else if (message) {
 					console.log(message);
-					window.location.href = '/';
+					// window.location.href = '/';
 				}
 
 				break;

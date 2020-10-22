@@ -28,9 +28,14 @@ export const Posts: FC = () => {
 
 					{posts?.error?.message}
 					{posts?.loading && <h1>Loading Posts...</h1>}
-					{posts?.data?.posts?.map((post: Post) => {
+					{posts?.data?.posts?.map((post: Post, i) => {
 						return (
-							<PostComp username={post.username} name={post.name} desc={post.desc} />
+							<PostComp
+								username={post.username}
+								name={post.name}
+								desc={post.desc}
+								key={i}
+							/>
 						);
 					})}
 				</div>
