@@ -14,6 +14,9 @@ export const Jumbotron: FC = () => {
 					<Link to='/posts'>
 						<button>All Posts</button>
 					</Link>
+					<Link to='/posts/create'>
+						<button>Create a Post</button>
+					</Link>
 				</div>
 			</div>
 		</div>

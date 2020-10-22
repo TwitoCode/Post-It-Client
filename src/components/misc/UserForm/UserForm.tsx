@@ -20,6 +20,7 @@ export const UserForm = (props: Props): ReactElement => {
 		switch (props.type) {
 			case 'up': {
 				const { error, message } = await signUp(email, password);
+
 				updateUserName(username);
 
 				if (error) {

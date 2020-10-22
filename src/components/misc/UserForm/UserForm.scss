@@ -21,11 +21,7 @@ form {
 		}
 
 		input {
-			outline: none;
-			border: #e8e8e8 1px solid;
-			padding: 0.75rem;
-			width: 100%;
-			border-radius: 0.25rem;
+			@include Input
 		}
 	}
 

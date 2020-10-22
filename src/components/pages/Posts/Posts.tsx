@@ -1,26 +1,34 @@
-import { useQuery } from '@apollo/client';
-import React, { FC } from 'react';
+import React, { FC, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Post } from '../../../interfaces';
+import { Post } from '../../../global';
+import { PostsContext } from '../../contexts/PostsContext';
 import { Navbar } from '../../misc/Navbar/Navbar';
 import { Post as PostComp } from '../../misc/Post/Post';
-import { POSTS } from '../../misc/queries';
 import './Posts.scss';
 
 export const Posts: FC = () => {
-	const { data, loading, error } = useQuery(POSTS);
-	// const { data } = useQuery(POST_BY_USER, { variables: { username: 'twito' } });
+	const { posts, refetchTime } = useContext(PostsContext);
+
+	useEffect(() => {
+		posts.refetch();
+	}, []);
 
 	return (
 		<>
 			<Navbar />
 			<div className='posts'>
 				<div className='container'>
-					<h1 className="header">All Posts</h1>
-					<Link to='/posts/create'><button className='create-post-link'>Create a Post</button></Link>
-					{error && error.message}
-					{loading && <h1>Loading Posts...</h1>}
-					{data?.posts?.map((post: Post) => {
+					<h1 className='header'>All Posts</h1>
+					<h1 className='refetch-time'>Refetching Posts in {refetchTime}s</h1>
+					<div className='create-post'>
+						<Link to='/posts/create'>
+							<button className='create-post-link'>Create a Post</button>
+						</Link>
+					</div>
+
+					{posts?.error?.message}
+					{posts?.loading && <h1>Loading Posts...</h1>}
+					{posts?.data?.posts?.map((post: Post) => {
 						return (
 							<PostComp username={post.username} name={post.name} desc={post.desc} />
 						);

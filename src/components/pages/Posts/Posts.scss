@@ -12,11 +12,27 @@
   
   .header {
     text-align: center;
+    margin: 2rem;
+    margin-bottom: 0;
+    font-size: 7rem;
+  }
+
+  .refetch-time {
+    text-align: center;
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+  }
+
+  .create-post {
+    display: flex;
+    flex: 1;
+    justify-content: center;
     margin: 1rem;
-    font-size: 4rem;
   }
 
   .create-post-link {
-    @include Button;
+    @include Button;margin-bottom: 3rem;
+    padding: 1.5rem 3rem;
+    font-size: 2.25rem;
   }
 }

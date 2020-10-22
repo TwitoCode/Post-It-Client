@@ -2,7 +2,7 @@ import { ApolloClient, ApolloProvider, HttpLink, InMemoryCache } from '@apollo/c
 import React, { FC } from 'react';
 
 const devURI = 'http://localhost:5000';
-const prodURI = 'https://twito-post-it-server.herokuapp.com/';
+// const prodURI = 'https://twito-post-it-server.herokuapp.com/';
 
 const client = new ApolloClient({
 	link: new HttpLink({ uri: devURI }),
